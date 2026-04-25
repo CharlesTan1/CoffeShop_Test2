@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fredoka+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background: #1a0a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Fredoka One', cursive;
+}
+
+canvas {
+  display: block;
+  cursor: default;
+}
+
+/* Upgrade Panel (right side) */
+#upgrade-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  background: rgba(20, 8, 0, 0.97);
+  border-left: 3px solid #f4a820;
+  padding: 12px 10px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: all;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+#upgrade-panel.visible {
+  display: flex;
+}
+
+.upg-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  color: #f4a820;
+  text-align: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(244, 168, 32, 0.3);
+  margin-bottom: 4px;
+}
+
+.upg-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.upg-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.upg-icon {
+  font-size: 1.3rem;
+}
+
+.upg-name {
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.78rem;
+  color: #fdf6ec;
+}
+
+.upg-desc {
+  font-size: 0.62rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.4;
+}
+
+.upg-stars {
+  font-size: 0.6rem;
+  color: #f4a820;
+}
+
+.upg-btn {
+  background: #f4a820;
+  color: #1a0800;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.72rem;
+  padding: 5px 8px;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 3px 0 #c8820a;
+  transition: all 0.1s;
+}
+
+.upg-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.upg-btn:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Event Log (bottom left) */
+#event-log {
+  position: fixed;
+  left: 8px;
+  bottom: 8px;
+  width: 210px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(244, 168, 32, 0.3);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 0.65rem;
+  line-height: 1.8;
+  pointer-events: none;
+  display: none;
+  z-index: 10;
+  max-height: 130px;
+  overflow: hidden;
+  color: #fdf6ec;
+  font-family: 'Nunito', sans-serif;
+}
+
+#event-log.visible {
+  display: block;
+}
+
+.log-good {
+  color: #4caf76;
+}
+
+.log-bad {
+  color: #e05252;
+}
+
+.log-prestige {
+  color: #ffaa44;
+  font-weight: bold;
+}
+
+.log-day {
+  color: #88ccff;
+}
