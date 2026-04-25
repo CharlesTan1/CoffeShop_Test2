@@ -288,7 +288,7 @@ function updateShopLevel() {
 }
 
 // =============================================================
-//  CUSTOMERS (no timer, patience balanced)
+//  CUSTOMERS
 // =============================================================
 function activeCustomers() {
   return G.customers.filter(c => c.state === 'walking' || c.state === 'waiting');
@@ -473,12 +473,7 @@ function drawParticles() {
   ctx.globalAlpha = 1;
 }
 function drawCups() {
-  const emap = {
-    espresso: '☕',
-    latte: '🥛',
-    frappuccino: '🧊',
-    tea: '🍵',
-  };
+  const emap = { espresso: '☕', latte: '🥛', frappuccino: '🧊', tea: '🍵' };
   floatCups.forEach(c => {
     ctx.globalAlpha = c.life;
     ctx.font = '26px serif';
@@ -490,7 +485,7 @@ function drawCups() {
 }
 
 // =============================================================
-//  SCENE DRAWING (condensed but complete)
+//  SCENE DRAWING (full original implementation)
 // =============================================================
 function drawScene() {
   const wg = ctx.createLinearGradient(0, 0, 0, LH * 0.55);
@@ -1110,7 +1105,7 @@ function updateUpgradePanel() {
     cd.style.cssText = 'text-align:center;padding:8px 0;border-top:1px solid rgba(244,168,32,0.3);margin-top:4px;';
     cd.innerHTML = `<span style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:#f4a820;">💰 $${G.coins}</span>`;
     panel.appendChild(cd);
-  } catch (e) {}
+  } catch (e) { }
 }
 
 function buyUpgrade(id) {
