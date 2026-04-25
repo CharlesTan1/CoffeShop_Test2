@@ -1,3 +1,4 @@
+/* style.css - All game styles */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fredoka+One&display=swap');
 
 * {
@@ -9,24 +10,18 @@
 
 body {
   background: #1a0a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
-  width: 100vw;
   overflow: hidden;
-  font-family: 'Fredoka One', cursive;
 }
 
 canvas {
   display: block;
   cursor: default;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 
-/* Upgrade Panel (right side) - visible only when playing */
 #upgrade-panel {
   position: fixed;
   right: 0;
@@ -41,7 +36,7 @@ canvas {
   gap: 8px;
   pointer-events: all;
   overflow-y: auto;
-  z-index: 20;
+  z-index: 10;
 }
 
 #upgrade-panel.visible {
@@ -120,7 +115,6 @@ canvas {
   cursor: not-allowed;
 }
 
-/* Event Log (bottom left) */
 #event-log {
   position: fixed;
   left: 8px;
@@ -134,11 +128,10 @@ canvas {
   line-height: 1.8;
   pointer-events: none;
   display: none;
-  z-index: 20;
+  z-index: 10;
   max-height: 130px;
-  overflow-y: auto;
+  overflow: hidden;
   color: #fdf6ec;
-  font-family: 'Nunito', sans-serif;
 }
 
 #event-log.visible {
